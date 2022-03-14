@@ -57,17 +57,6 @@ const posts = [
 ];
 
 
-
-const likeButton = document.querySelector('.like-button.js-like-button');
-
-let numberOfLikes = document.getElementById('like-counter-1');
-
-likeButton.addEventListener('click', function (){
-    likeButton.classList.toggle('active-blue');
-
-    numberOfLikes.innerHTML = 81;
-});
-
 const postContainer = document.getElementById('container');
 
 let newPostContent = '';
@@ -111,4 +100,12 @@ for (let i = 0; i < posts.length; i++) {
     console.log(newPostContent);
 };
 
-console.log(postContainer);
+const likeButton = document.querySelector('.like-button.js-like-button');
+
+let numberOfLikes = document.getElementById('like-counter-1');
+
+likeButton.addEventListener('click', function (){
+    likeButton.classList.toggle('active-blue');
+
+    numberOfLikes.innerHTML = 81;
+});
