@@ -67,10 +67,10 @@ for (let i = 0; i < posts.length; i++) {
         <div class="post__header">
             <div class="post-meta">                    
                 <div class="post-meta__icon">
-                    <img class="profile-pic" src=${posts[i].author.image} alt="${posts[i].author}">                    
+                    <img class="profile-pic" src=${posts[i].author.image} alt="${posts[i].author.name}">                    
                 </div>
                 <div class="post-meta__data">
-                    <div class="post-meta__author">Phil Mangione</div>
+                    <div class="post-meta__author">${posts[i].author.name}</div>
                     <div class="post-meta__time">${posts[i].created}</div>
                 </div>                    
             </div>
@@ -100,12 +100,14 @@ for (let i = 0; i < posts.length; i++) {
     console.log(newPostContent);
 };
 
-const likeButton = document.querySelector('.like-button.js-like-button');
+const likeButtons = document.querySelectorAll('.like-button.js-like-button');
 
 let numberOfLikes = document.getElementById('like-counter-1');
 
-likeButton.addEventListener('click', function (){
-    likeButton.classList.toggle('active-blue');
-
-    numberOfLikes.innerHTML = 81;
-});
+for (let i = 0; i < posts.length; i++) {
+    likeButtons[i].addEventListener('click', function (){
+        likeButtons.classList.toggle('active-blue');
+    
+        numberOfLikes.innerHTML = 81;
+    });
+}
