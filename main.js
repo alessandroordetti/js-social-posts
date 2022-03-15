@@ -61,7 +61,7 @@ const postContainer = document.getElementById('container');
 
 let newPostContent = '';
 
-for (let i = 0; i < posts.length; i++) {
+for (let i = 1; i < posts.length; i++) {
     newPostContent = `
         <div class="post">
         <div class="post__header">
